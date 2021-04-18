@@ -1,0 +1,77 @@
+﻿@model WebApplication1.Models.ProductDetail
+
+
+
+@ViewBag.ThisKey
+<h1>CreateProduct</h1>
+
+
+    <form method="post" asp-action="CreateProduct">
+        <div>
+            <div asp-validation-summary="ModelOnly" class="text-center"> </div>
+
+            <div>
+                <h2 class="text-info p-3">Add category</h2>
+            </div>
+
+            <div class="row">
+                <div class="col-8">
+                    <div class="form-group row">
+                        <div class="col-4">
+                            <label asp-for="ProName"> </label>
+                        </div>
+                        <div class="col-8">
+                            <input asp-for="ProName" class="form-group" />
+                            <span asp-validation-for="ProName" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-4">
+                            <label asp-for="Price"></label>
+                        </div>
+                        <div class="col-8">
+                            <input asp-for="Price" class="form-group" />
+                            <span asp-validation-for="Price" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-4">
+                            <label asp-for="PolicyEffectiveDate"> </label>
+                        </div>
+                        <div class="col-8">
+                            <input asp-for="PolicyEffectiveDate" class="form-group" />
+                            <span asp-validation-for="PolicyEffectiveDate" />
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <div class="col-8 offset-4 row">
+                           
+                            
+                                <div class="col">
+                                    <input type="submit" class="btn btn-info w-100" value="Create" />
+                                </div>
+                            
+
+                            <div class="col">
+                                <a asp-controller="ProDetail1" asp-action="Index" class="btn btn-success w-100">
+                                    <i class="fas fa-step-backward"></i> Back
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+        
+    </form>
+
+    @section Scripts{
+        @{
+            <partial name="_ValidationClientSide" />
+        }
+    }
